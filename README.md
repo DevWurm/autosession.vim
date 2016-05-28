@@ -11,7 +11,7 @@ autosession.vim **doesn't store the session by default** (because this would blo
 ### Plugin manager
 Of course you can install autosession.vim with your favourite (Pathogene-compatible [like most of them]) plugin-manager.<br>
 With (dein.vim)(https://github.com/Shougo/dein.vim) you add this to your plugin configuration:
-``` 
+```VimL
 dein#add('DevWurm/autosession.vim')
 ```
 However you will know best how to install it with your plugin-manager.
@@ -22,13 +22,13 @@ git clone https://github.com/DevWurm/autosession.vim.git ./autosession.vim
 ```
 #### Vim
 You can install the plugin manually, by copying the `./autosession.vim/plugin/autosession.vim` file in a subdirectory of your plugin directory (typically `~/.vim/bundle/autosession.vim/` or `~/.vim/plugin/autosession.vim/`) and adding this subdirectory to your Vim runtimepath
-```
+```VimL
 set runtimepath^=~/.vim/<bundle/plugin/...>/autosession.vim
 ```
 After that you have to copy the `./autosession.vim/autoload/autosession.vim` file into the `~/.vim/autoload/` directory.
 #### Neovim
 In Neovim you can install the plugin manually, by copying the `./autosession.vim/plugin/autosession.vim` file in a subdirectory of your plugin directory (typically `~/.config/nvim/bundle/autosession.vim/` or `~/.config/nvim/plugin/autosession.vim/`) and adding this subdirectory to your Vim runtimepath
-```
+```VimL
 set runtimepath^=~/.config/nvim/<bundle/plugin/...>/autosession.vim
 ```
 After that you have to copy the `./autosession.vim/autoload/autosession.vim` file into the `~/.config/nvim/autoload/` directory.
@@ -38,13 +38,13 @@ Using autosession.vim is pretty straightforward. autosession.vim saves the curre
 ### Saving the session
 autosession.vim doesn't save sessions automatically to prevent the bloating of your system with undesired session setups.<br>
 To save the current session in the working directory as `.session.vim` the plugin provides the
-```
+```VimL
 :SessionSave
 ```
 command.
 #### Custom command setup
 You can specify some custom commandline commands to include the saving of the session into your workflow. E.g. insert the following lines somewhere into your `.vimrc`/`init.vim` or into a file sourced there to enable the `:Q` (as well as the `:Q!`) command as session-saving equivalent to `:q` (respectively `:q!`) and the `:WQ` (as well as the `WQ!`) command as session-saving equivalent to `:wq` (respecively `:wq!`):
-```
+```VimL
 " execute the SaveSession command of the autosession.vim plugin and close vim when executing :Q
 " and enable the use of ! to force closing even if buffer is not saved
 command -bang Q :SessionSave | if <bang>0 | q! | else | q | endif
