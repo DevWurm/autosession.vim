@@ -1,7 +1,7 @@
 # autosession.vim
 Vim (Neovim) plugin for automatically load the last session setup in the project.<br>
 autosession.vim enables a more fluent behavior of Vim when used in real projects (not just single file editing) by storing the whole session setup of vim (including layout, buffers, configuration, history, etc.) in the current directory, so Vim can be restored exactly as it was when is was opened the last time.<br>
-autosession.vim **doesn't store the session by default** (because this would bloat your whole system with session files, everytime you use vim to edit a file somewhere). It just **looks automatically for previous sessions** in the current directory, when Vim is invoked without a file specified. With some [command configurations](#commands) you can include the creation and not-creation of session files in your workflow flawlessly.
+autosession.vim **doesn't store the session by default** (because this would bloat your whole system with session files, everytime you use vim to edit a file somewhere). It just **looks automatically for previous sessions** in the current directory, when Vim is invoked without a file specified. With some [command configurations](#custom-command-setup-commands) you can include the creation and not-creation of session files in your workflow flawlessly.
 
 ## Installation
 ### Plugin repo
@@ -42,7 +42,7 @@ To save the current session in the working directory as `.session.vim` the plugi
 :SessionSave
 ```
 command.
-#### Custom command setup [commands]
+#### Custom command setup
 You can specify some custom commandline commands to include the saving of the session into your workflow. E.g. insert the following lines somewhere into your `.vimrc`/`init.vim` or into a file sourced there to enable the `:Q` (as well as the `:Q!`) command as session-saving equivalent to `:q` (respectively `:q!`) and the `:WQ` (as well as the `WQ!`) command as session-saving equivalent to `:wq` (respecively `:wq!`):
 ```
 " execute the SaveSession command of the autosession.vim plugin and close vim when executing :Q
