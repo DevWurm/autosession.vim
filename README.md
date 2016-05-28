@@ -1,7 +1,7 @@
 # autosession.vim
 Vim (Neovim) plugin for automatically load the last session setup in the project.<br>
 autosession.vim enables a more fluent behavior of Vim when used in real projects (not just single file editing) by storing the whole session setup of vim (including layout, buffers, configuration, history, etc.) in the current directory, so Vim can be restored exactly as it was when is was opened the last time.<br>
-autosession.vim **doesn't store the session by default** (because this would bloat your whole system with session files, everytime you use vim to edit a file somewhere). It just **looks automatically for previous sessions* in the current directory, when Vim is invoked without a file specified. With some [command configurations](#commands) you can include the creation and not-creation of session files in your workflow flawlessly.
+autosession.vim **doesn't store the session by default** (because this would bloat your whole system with session files, everytime you use vim to edit a file somewhere). It just **looks automatically for previous sessions** in the current directory, when Vim is invoked without a file specified. With some [command configurations](#commands) you can include the creation and not-creation of session files in your workflow flawlessly.
 
 ## Installation
 ### Plugin repo
