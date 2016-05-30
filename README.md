@@ -62,7 +62,12 @@ autocmd VimLeavePre * SessionSave
 ```
 ### Loading the session
 Loading the session is pretty easy. If Vim is invoked without a file specified (`vim` and not `vim some.file`) autosession.vim searches a `.session.vim` file in the current directory. If there's one present it restores the session, otherwise it doesn't. Thats it. Nothing else. No rocket science.
-
+#### Loading the session manually
+You can load a session from the invokation directory during runtime by calling the following command provided by autosession.vim:
+```
+:SessionLoad
+```
+Of course you can bind this command to other commands or keys. To include it perfectly into your workflow.
 ##Access
 You can access the current (developement) source on <a href="https://github.com/DevWurm/autosession.vim/">GitHub</a>. The
 current stable version is provided in the latest <a href="https://github.com/DevWurm/autosession.vim/releases">GitHub Release</a>.
