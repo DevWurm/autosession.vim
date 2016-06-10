@@ -8,7 +8,7 @@ function ASTryLoadSessionIfNoFileSpecified(sessionfile)
     endif
 endfunction
 
-" setuo commands and autocommands
+" setup commands and autocommands
 command -bar SessionSave call autosession#ASSaveSession('.session.vim')
 command -bar SessionLoad call autosession#ASTryLoadSession('.session.vim')
-autocmd VimEnter *  call ASTryLoadSessionIfNoFileSpecified('.session.vim')
+autocmd VimEnter * nested call ASTryLoadSessionIfNoFileSpecified('.session.vim')
